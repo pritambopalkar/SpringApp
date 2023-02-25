@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="common" class="com.Vinod.Student">
+		<property name="rollnumber" value="10"></property>
+	</bean>
+
+
+	<!-- FOR LIST
+	
+	 <bean id="xyz" class="com.Pritam.EmployeeDetails">
+		<property name="employees">
+			<list>
+				<ref bean="emp" />
+				<ref bean="emp2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="emp" class="com.Models.Employee">
+		<property name="emp_fname" value="Kiran" />
+		<property name="emp_Lname" value="Jadhav"></property>
+	</bean>
+
+	<bean id="emp2" class="com.Models.Employee">
+		<property name="emp_fname" value="Vinod" />
+		<property name="emp_Lname" value="Borse"></property>
+	</bean>
+ 	-->
+ 	
+ 	<!-- BY REFRENCE OF OTHER BEAN
+ 	
+	 <bean id="xyz" class="com.Pritam.EmployeeDetails">
+		<property name="employee" ref="emp2">
+			
+		</property>
+	</bean>
+
+	<bean id="emp" class="com.Models.Employee">
+		<property name="emp_fname" value="Kiran" />
+		<property name="emp_Lname" value="Jadhav"></property>
+	</bean>
+
+	<bean id="emp2" class="com.Models.Employee">
+		<property name="emp_fname" value="Vinod" />
+		<property name="emp_Lname" value="Borse"></property>
+	</bean>
+ -->
+ 	
+ 	
+ 	<!-- INNER BEAN	
+ 	
+ <bean id="xyz" class="com.Pritam.EmployeeDetails">
+		<property name="employee">
+			<bean  class="com.Models.Employee">
+				<property name="emp_fname" value="Sonakshi" />
+				<property name="emp_Lname" value="sinha"/>
+			</bean>	
+		</property>
+	</bean>
+		
+		 -->
+		 
+<!-- AUTOWIRING - BYNAME
+	
+<bean id="xyz" class="com.Pritam.EmployeeDetails" autowire="byName"/>
+		<bean id="employee" class="com.Models.Employee">
+			<property name="emp_fname" value="Salman" />
+			<property name="emp_Lname" value="Khan"></property>		
+		</bean>
+	 -->
+	
+	<!-- 	AUTOWIRING BYTYPE
+	
+	<bean id="xyz" class="com.Pritam.EmployeeDetails" autowire="byType"/>
+		<bean  class="com.Models.Employee">
+			<property name="emp_fname" value="Dhaval" />
+			<property name="emp_Lname" value="Kulkarni"></property>		
+		</bean 
+	-->
+
+<!--  SCOPES
+	<bean id="xyz" class="com.Pritam.EmployeeDetails" autowire="byType" />
+	
+	<bean id="xyz" class="com.Pritam.CompanyDetails" autowire="byType" scope="singletone" />
+	
+	<bean id="xyz" class="com.Pritam.HRDetails" autowire="byType"  scope="prototype"/>
+	
+	<bean id="xyz" class="com.Pritam.ClientDetails" autowire="byType" scope="request"/>
+	
+	<bean id="xyz" class="com.Pritam.ProjectDetails" autowire="byType" scope="session"/>
+	
+	<bean id="xyz" class="com.Pritam.Details" autowire="byType" scope="globalsession"/>
+	
+		<bean  class="com.Models.Employee" scope="prototype">   
+			<property name="emp_fname" value="Dhaval" />
+			<property name="emp_Lname" value="Kulkarni"></property>		
+		</bean>
+ -->
+	
+</beans>
